@@ -33,8 +33,7 @@ app.get("/{*splat}", (req, res) => {
 
 const PORT = process.env.PORT || 5001;
 
-mongoose
-  .connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
